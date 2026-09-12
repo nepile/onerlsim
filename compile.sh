@@ -9,7 +9,7 @@ mkdir -p target
 cp -r src/gui target
 
 javac \
-    -soruce 21 \
+    -source 21 \
     -target 21 \
     -cp "lib/*:src" \
     -d target \
