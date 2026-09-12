@@ -12,38 +12,53 @@ simulations interactively in real-time and results after their completion.
 
 Please read this repository's [**wiki**](https://github.com/Trustacean/the-one-sdu-mod/wiki).
 
-## Compiling and Running
+## Compiling, Running, and Documentation
 
-On Windows, run `compile.bat` to compile. Then run `one.bat [args]` to run the simulator.
+This project uses a unified **Makefile** to automate building, running, and generating documentation seamlessly across both **Windows and Linux/macOS**. The execution scripts are safely contained within the `cmd/` directory.
 
-The modern batch folders are meant for Windows, `.sh` files are available for linux, but is outdated.
+### Compilation
+To compile the simulator (outputs to the `target/` directory):
+```
+make compile
+```
 
 ### Quick Running
+To run the simulator with GUI:
+```
+make run 1 [path-to-setting-file]
+```
 
-Windows, with GUI:
+To run the simulator in batch mode (no GUI):
 ```
-.\one.bat 1 [path-to-setting-file]
+make run-batch 1 [path-to-setting file]
 ```
-Windows, batch mode (no GUI):
+
+**Note:** If you do not have make installed, you can manually execute the scripts located in the `cmd/` folder (e.g., .`\cmd\compile.bat` and `.\cmd\one.bat` for Windows, or `./cmd/compile.sh` and `./cmd/one.sh` for Linux).
+
+### Generating Documentation
+To generate Javadoc documentation for the source code:
+
 ```
-.\one.bat -b 1 [path-to-setting-file]
+make create-docs
 ```
+_The generated HTML documentation will be available in the docs/ directory. Open docs/index.html to view it._
 
 Configuring running with multiple parameters are elaborated in
 [wiki#configuring](https://github.com/Trustacean/the-one-sdu-mod/wiki#configuring)
 and [wiki#running](https://github.com/Trustacean/the-one-sdu-mod/wiki#running).
 
 ## Project Structure
-
 This repository is organized to directories as follows:
 ```
 .
+├───cmd                          ### AUTOMATION SCRIPTS (Windows .bat & Linux .sh)
 ├───data                         ### 
 │   ├───events                   # Events related data
 │   └───spatial                  # Routes related data (MapBased)
 │       ├───cluster              # cluster route
 │       ├───HelsinkiMedium       # helsinki's routes
 │       └───Manhattan            # manhattan's routes
+├───docs                         ### GENERATED JAVADOCS (via make create-docs)
 ├───lib                          ### LOCAL LIBRARIES USED FOR CLASSPATH
 ├───reports                      ### OUTPUT DIRECTORY FOR REPORTS
 ├───settings                     ### SETTINGS GROUPING
@@ -65,12 +80,12 @@ This repository is organized to directories as follows:
 │   ├───test                     # simulator tests
 │   └───ui                       # simulator text UI stuff
 ├───target                       ### JAVA BINARY OUTPUT DIRECTORY
-└───toolkit                      ### LEGACY GRAPHING KIT
+├───toolkit                      ### LEGACY GRAPHING KIT
+└───Makefile                     ### UNIFIED BUILD & RUN AUTOMATION SCRIPT
 ```
 Strictly follow the above structure.
 
 ## Important Note
-
 This modern repository uses **Java SDK 21** (LTS) to both compile and run the simulator.
 Older versions of Java SDK are not supported. If you want to use the older versions,
 refer to the legacy repositories at:
