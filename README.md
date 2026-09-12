@@ -33,7 +33,7 @@ To run the simulator in batch mode (no GUI):
 make run-batch 1 [path-to-setting file]
 ```
 
-**Note:** If you do not have make installed, you can manually execute the scripts located in the `cmd/` folder (e.g., .`\cmd\compile.bat` and `.\cmd\one.bat` for Windows, or `./cmd/compile.sh` and `./cmd/one.sh` for Linux).
+**Note:** _If you do not have make installed, you can manually execute the scripts located in the `cmd/` folder (e.g., .`\cmd\compile.bat` and `.\cmd\one.bat` for Windows, or `./cmd/compile.sh` and `./cmd/one.sh` for Linux)._
 
 ### Generating Documentation
 To generate Javadoc documentation for the source code:
