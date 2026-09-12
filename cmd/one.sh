@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # Configuration variables
-TARGETDIR="target"
-LIBDIR="lib"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+TARGETDIR="$PROJECT_ROOT/target"
+LIBDIR="$PROJECT_ROOT/lib"
 MAINCLASS="core.DTNSim"
 MEMORY="512M"
 # ^ Modify the memory limit as needed, 512 is kinda low for dtnsim lol, but
