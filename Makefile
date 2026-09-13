@@ -2,6 +2,16 @@
 # Makefile - Automation Script
 # Created: Neville, September 2026
 # ==============================================================================
+# Additional notes:
+# For IDEA users, please install GNU Make to run the code.
+# You can install the GNU MakeFile plugin in IDEA or install GNU Make manually:
+# https://gnuwin32.sourceforge.net/packages/make.htm
+# Alternatively, open PowerShell on Windows and run the following commands:
+# - winget search "GNU Make"
+# - winget install GnuWin32.Make
+# - make --version
+# Then, run The ONE program as described in README.md.
+# ==============================================================================
 
 # parsing the arguments
 ifeq (run,$(firstword $(MAKECMDGOALS)))
